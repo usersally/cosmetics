@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Veloura design tokens.
+   If your project uses Tailwind v3 instead of v4, delete the
+   @theme block below and paste its values into tailwind.config.js
+   under theme.extend.colors / theme.extend.fontFamily instead.
+------------------------------------------------------------------*/
+@theme {
+  --color-cream: #fcf4f1;
+  --color-cream-2: #f6e9e4;
+  --color-rose: #7d2e3b;
+  --color-rose-light: #9c4a57;
+  --color-rose-dark: #521f28;
+  --color-blush: #f3c9ce;
+  --color-blush-soft: #f8dbdf;
+  --color-ink: #221a1d;
+  --color-gold: #b78a4a;
+  --color-gold-soft: #ddc191;
+
+  --font-serif: "Fraunces", "Iowan Old Style", serif;
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-rose);
+  color: var(--color-cream);
+}
+
+/* Visible keyboard focus everywhere, brand-colored instead of the browser default */
+:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
